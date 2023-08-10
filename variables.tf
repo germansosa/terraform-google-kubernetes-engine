@@ -502,7 +502,7 @@ variable "filestore_csi_driver" {
   default     = false
 }
 
-variable "gcs_fuse_csi_driver_config" {
+variable "gcs_fuse_csi_driver" {
   type        = bool
   description = "The status of the GCS Fuse CSI driver addon, which allows the usage of GCS buckets as volumes"
   default     = false
