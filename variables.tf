@@ -502,6 +502,12 @@ variable "filestore_csi_driver" {
   default     = false
 }
 
+variable "gcs_fuse_csi_driver_config" {
+  type        = bool
+  description = "The status of the GCS Fuse CSI driver addon, which allows the usage of GCS buckets as volumes"
+  default     = false
+}
+
 variable "disable_legacy_metadata_endpoints" {
   type        = bool
   description = "Disable the /0.1/ and /v1beta1/ metadata server endpoints on the node. Changing this value will cause all node pools to be recreated."

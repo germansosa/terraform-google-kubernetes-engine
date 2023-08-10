@@ -183,6 +183,10 @@ resource "google_container_cluster" "primary" {
       enabled = var.filestore_csi_driver
     }
 
+    gcs_fuse_csi_driver_config {
+      enabled = var.gcsfuse_csi_driver
+    }
+
     dynamic "gce_persistent_disk_csi_driver_config" {
       for_each = local.cluster_gce_pd_csi_config
 
