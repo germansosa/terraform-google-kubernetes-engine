@@ -82,14 +82,10 @@ resource "google_container_cluster" "primary" {
   }
   monitoring_service = local.logmon_config_is_set ? null : var.monitoring_service
   dynamic "monitoring_config" {
-    for_each = length(var.monitoring_enabled_components) > 0 || var.monitoring_enable_managed_prometheus ? [1] : []
-
     content {
       enable_components = length(var.monitoring_enabled_components) > 0 ? var.monitoring_enabled_components : []
 
       dynamic "managed_prometheus" {
-        for_each = var.monitoring_enable_managed_prometheus ? [1] : []
-
         content {
           enabled = var.monitoring_enable_managed_prometheus
         }
